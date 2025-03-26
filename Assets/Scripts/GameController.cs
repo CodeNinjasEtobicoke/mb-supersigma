@@ -11,7 +11,8 @@ public class GameController : MonoBehaviour
     public float spawnDelay = 2;
     [Header("default spawn time")]
     public float spawnTime = 3;
-
+    [Header("game over ui canvas")]
+    public GameObject GameOverCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +29,7 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         CancelInvoke("Spawn");
+        GameOverCanvas.SetActive(true);
+        Time.timeScale = 0;
     }
 }
